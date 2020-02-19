@@ -3,10 +3,11 @@
 </h2>
 
 <!-- Loop Through all products -->
-<div *ngFor="let product of products">
+<div *ngFor="let product of products; index as productId">
   <!-- Show Product Name with a help text and an anchor -->
   <h3>
-    <a [title]="product.name + ' details'">
+    <a [title]="product.name + ' details'"
+       [routerLink]="['/products', productId]">
       {{ product.name }}
     </a>
   </h3>
